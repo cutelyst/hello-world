@@ -34,7 +34,7 @@ Root::~Root()
 void Root::hello(Context *ctx)
 {
     qDebug() << "*** Root::hello()";
-    ctx->response()->body() == "Hello World! \n";
+    ctx->response()->body() = "Hello World! \n";
     ctx->response()->body().append("Path is: " + ctx->request()->path());
 }
 
