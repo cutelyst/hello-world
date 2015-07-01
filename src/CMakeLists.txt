@@ -1,13 +1,5 @@
-include_directories(
-    ${CMAKE_CURRENT_BINARY_DIR}
-    ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
 # Our sources
-set(hello_SRCS
-    root.cpp
-    hello.cpp
-)
+file(GLOB_RECURSE hello_SRCS *)
 
 # Create the application
 add_library(hello SHARED ${hello_SRCS})

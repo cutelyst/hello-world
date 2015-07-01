@@ -21,6 +21,9 @@
 
 #include "root.h"
 
+#include <QDebug>
+#include <QCoreApplication>
+
 HelloWorld::HelloWorld(QObject *parent) :
     Cutelyst::Application(parent)
 {
