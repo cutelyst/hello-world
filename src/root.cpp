@@ -23,7 +23,7 @@
 
 #include <QDebug>
 
-Root::Root()
+Root::Root(Application *app) : Controller(app)
 {
 }
 

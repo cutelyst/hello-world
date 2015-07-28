@@ -36,7 +36,7 @@ HelloWorld::~HelloWorld()
 
 bool HelloWorld::init()
 {
-    registerController(new Root);
+    new Root(this);
 
     return true;
 }
