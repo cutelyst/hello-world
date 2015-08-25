@@ -29,7 +29,7 @@ class Root : public Controller
     Q_OBJECT
     C_NAMESPACE("")
 public:
-    Root(Application *app);
+    Root(QObject *app);
     ~Root();
 
 public:
