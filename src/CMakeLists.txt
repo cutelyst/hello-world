@@ -4,12 +4,9 @@ file(GLOB_RECURSE hello_SRCS *)
 # Create the application
 add_library(hello SHARED ${hello_SRCS})
 
-# Link to Qt modules
-qt5_use_modules(hello Core)
-
 # Link to Cutelyst
 target_link_libraries(hello
-    Cutelyst::cutelyst-qt5 
+    Cutelyst::Core
 )
 
 # TODO install to a place where uWSGI Cutelyst plugin searches for

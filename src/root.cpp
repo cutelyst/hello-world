@@ -36,7 +36,7 @@ void Root::hello(Context *ctx)
     qDebug() << "*** Root::hello()" << ctx->req()->queryParameters();
     qDebug() << "*** Root::hello()" << ctx->req()->queryParametersVariant();
     ctx->response()->body() = "Hello World! \n";
-    ctx->response()->body().append("Path is: " + ctx->request()->queryParam(QStringLiteral("foo")));
+    ctx->response()->body().append("Path is: " + ctx->request()->path());
 }
 
 void Root::Begin(Context *ctx)
