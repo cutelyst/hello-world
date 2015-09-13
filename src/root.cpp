@@ -33,24 +33,24 @@ Root::~Root()
 
 void Root::hello(Context *ctx)
 {
-    qDebug() << "*** Root::hello()" << ctx->req()->queryParameters();
-    qDebug() << "*** Root::hello()" << ctx->req()->queryParametersVariant();
+//    qDebug() << "*** Root::hello()" << ctx->req()->queryParameters();
+//    qDebug() << "*** Root::hello()" << ctx->req()->queryParametersVariant();
     ctx->response()->body() = "Hello World! \n";
-    ctx->response()->body().append("Path is: " + ctx->request()->path());
+//    ctx->response()->body().append("Path is: " + ctx->request()->path());
 }
 
 void Root::Begin(Context *ctx)
 {
-    qDebug() << "*** Root::Begin()";
+//    qDebug() << "*** Root::Begin()";
 }
 
 bool Root::Auto(Context *ctx)
 {
-    qDebug() << "*** Root::Auto()";
+//    qDebug() << "*** Root::Auto()";
     return true;
 }
 
 void Root::End(Context *c)
 {
-    qDebug() << "*** Root::End()";
+//    qDebug() << "*** Root::End()";
 }
