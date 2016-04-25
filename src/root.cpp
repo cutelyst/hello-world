@@ -23,6 +23,9 @@
 
 #include <QDebug>
 
+
+#include <QtCore/QJsonDocument>
+#include <QtCore/QJsonObject>
 Root::Root(QObject *app) : Controller(app)
 {
 }
@@ -35,8 +38,15 @@ void Root::hello(Context *ctx)
 {
 //    qDebug() << "*** Root::hello()" << ctx->req()->queryParameters();
 //    qDebug() << "*** Root::hello()" << ctx->req()->queryParametersVariant();
-    ctx->response()->body() = "Hello World! \n";
+//    ctx->response()->setBody(QByteArrayLiteral("Hello World! \n"));
 //    ctx->response()->body().append("Path is: " + ctx->request()->path());
+
+    QJsonObject obj;
+    obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
+
+    Response *res = ctx->response();
+    res->setBody(QJsonDocument(obj).toJson(QJsonDocument::Compact));
+    res->setContentType(QStringLiteral("application/json"));
 }
 
 void Root::Begin(Context *ctx)
