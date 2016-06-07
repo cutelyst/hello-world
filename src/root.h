@@ -33,8 +33,11 @@ public:
     ~Root();
 
 public:
-    C_ATTR(hello, :Path)
+    C_ATTR(hello, :Path :AutoArgs)
     void hello(Context *ctx);
+
+    C_ATTR(json, :Local :AutoArgs)
+    void json(Context *ctx);
 
 private slots:
     void Begin(Context *ctx);

@@ -36,11 +36,11 @@ Root::~Root()
 
 void Root::hello(Context *ctx)
 {
-//    qDebug() << "*** Root::hello()" << ctx->req()->queryParameters();
-//    qDebug() << "*** Root::hello()" << ctx->req()->queryParametersVariant();
-//    ctx->response()->setBody(QByteArrayLiteral("Hello World! \n"));
-//    ctx->response()->body().append("Path is: " + ctx->request()->path());
+    ctx->response()->setBody(QByteArrayLiteral("Hello World! \n"));
+}
 
+void Root::json(Context *ctx)
+{
     QJsonObject obj;
     obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
 
