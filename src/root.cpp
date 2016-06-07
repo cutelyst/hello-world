@@ -48,19 +48,3 @@ void Root::json(Context *ctx)
     res->setBody(QJsonDocument(obj).toJson(QJsonDocument::Compact));
     res->setContentType(QStringLiteral("application/json"));
 }
-
-void Root::Begin(Context *ctx)
-{
-//    qDebug() << "*** Root::Begin()";
-}
-
-bool Root::Auto(Context *ctx)
-{
-//    qDebug() << "*** Root::Auto()";
-    return true;
-}
-
-void Root::End(Context *c)
-{
-//    qDebug() << "*** Root::End()";
-}

@@ -38,11 +38,6 @@ public:
 
     C_ATTR(json, :Local :AutoArgs)
     void json(Context *ctx);
-
-private slots:
-    void Begin(Context *ctx);
-    bool Auto(Context *ctx);
-    void End(Context *ctx);
 };
 
 #endif // ROOT_H
