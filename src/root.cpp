@@ -34,9 +34,9 @@ Root::~Root()
 {
 }
 
-void Root::hello(Context *ctx)
+void Root::hello(Context *c)
 {
-    ctx->response()->setBody(QByteArrayLiteral("Hello World! \n"));
+    c->response()->setBody(QByteArrayLiteral("Hello World! \n"));
 }
 
 void Root::json(Context *ctx)
@@ -44,7 +44,5 @@ void Root::json(Context *ctx)
     QJsonObject obj;
     obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
 
-    Response *res = ctx->response();
-    res->setBody(QJsonDocument(obj).toJson(QJsonDocument::Compact));
-    res->setContentType(QStringLiteral("application/json"));
+    c->res()->setJsonBody(QJsonDocument(obj));
 }
