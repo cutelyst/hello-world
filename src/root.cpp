@@ -39,7 +39,7 @@ void Root::hello(Context *c)
     c->response()->setBody(QByteArrayLiteral("Hello World! \n"));
 }
 
-void Root::json(Context *ctx)
+void Root::json(Context *c)
 {
     QJsonObject obj;
     obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
