@@ -20,12 +20,13 @@
 #include "root.h"
 
 #include <Cutelyst/Context>
+#include <Cutelyst/Plugins/Session/Session>
 
 #include <QDebug>
 
-
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
+
 Root::Root(QObject *app) : Controller(app)
 {
 }
@@ -45,4 +46,19 @@ void Root::json(Context *c)
     obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
 
     c->res()->setJsonBody(QJsonDocument(obj));
+}
+
+void Root::session(Context *c)
+{
+    QString foo = Session::value(c, QStringLiteral("foo")).toString();
+
+    c->response()->setBody(QLatin1String("Foo: ") + foo + QLatin1Char('\n'));
+
+    Session::setValue(c, QStringLiteral("foo"), QStringLiteral("bar"));
+}
+
+void Root::read_session(Context *c)
+{
+    QString foo = Session::value(c, QStringLiteral("foo")).toString();
+    c->response()->setBody(QLatin1String("Foo: ") + foo + QLatin1Char('\n'));
 }

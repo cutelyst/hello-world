@@ -7,6 +7,7 @@ add_library(hello SHARED ${hello_SRCS})
 # Link to Cutelyst
 target_link_libraries(hello
     Cutelyst::Core
+    Cutelyst::Session
 )
 
 # TODO install to a place where uWSGI Cutelyst plugin searches for

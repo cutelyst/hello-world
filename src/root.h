@@ -34,10 +34,16 @@ public:
 
 public:
     C_ATTR(hello, :Path :AutoArgs)
-    void hello(Context *ctx);
+    void hello(Context *c);
 
     C_ATTR(json, :Local :AutoArgs)
-    void json(Context *ctx);
+    void json(Context *c);
+
+    C_ATTR(session, :Local :AutoArgs)
+    void session(Context *c);
+
+    C_ATTR(read_session, :Local :AutoArgs)
+    void read_session(Context *c);
 };
 
 #endif // ROOT_H

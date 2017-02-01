@@ -24,9 +24,12 @@
 #include <QDebug>
 #include <QCoreApplication>
 
+#include <Cutelyst/Plugins/Session/Session>
+
 HelloWorld::HelloWorld(QObject *parent) :
     Cutelyst::Application(parent)
 {
+    QCoreApplication::setApplicationName(QStringLiteral("HelloWorld"));
     qDebug() << "HelloWorld::HelloWorld" << QCoreApplication::applicationPid();
 }
 
@@ -37,6 +40,10 @@ HelloWorld::~HelloWorld()
 bool HelloWorld::init()
 {
     new Root(this);
+
+    if (qEnvironmentVariableIsSet("TEST_SESSION")) {
+        new Session(this);
+    }
 
     return true;
 }
