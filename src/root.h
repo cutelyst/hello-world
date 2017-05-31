@@ -39,6 +39,12 @@ public:
     C_ATTR(json, :Local :AutoArgs)
     void json(Context *c);
 
+    C_ATTR(echo, :Local :AutoArgs)
+    void echo(Context *c);
+
+    C_ATTR(ws, :Local :AutoArgs)
+    void ws(Context *c);
+
     C_ATTR(session, :Local :AutoArgs)
     void session(Context *c);
 
