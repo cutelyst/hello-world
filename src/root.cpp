@@ -42,10 +42,9 @@ void Root::hello(Context *c)
 
 void Root::json(Context *c)
 {
-    QJsonObject obj;
-    obj.insert(QStringLiteral("message"), QStringLiteral("Hello, World!"));
-
-    c->res()->setJsonBody(QJsonDocument(obj));
+    c->res()->setJsonBody(QJsonDocument({
+                                            {QStringLiteral("message"), QStringLiteral("Hello, World!")}
+                                        }));
 }
 
 void Root::echo(Context *c)
