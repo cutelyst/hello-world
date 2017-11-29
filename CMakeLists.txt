@@ -5,7 +5,7 @@ find_package(Qt5 COMPONENTS
     Core
     Network
 )
-find_package(CutelystQt5 REQUIRED)
+find_package(CutelystQt5 1.11.0 REQUIRED)
 
 # Auto generate moc files
 set(CMAKE_AUTOMOC ON)
